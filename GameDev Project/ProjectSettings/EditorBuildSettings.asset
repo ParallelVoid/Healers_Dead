@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MoveInventoryScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Church.unity
     guid: b0f088758652db247b7ac97865dadfcc
+  - enabled: 1
+    path: Assets/Scenes/Cemetery.unity
+    guid: 97d7e7d0e3ce6a0488cc7bbb7e085f29
   m_configObjects: {}
