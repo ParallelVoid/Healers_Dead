@@ -13627,6 +13627,10 @@ PrefabInstance:
       propertyPath: sceneBuildIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2938772078649897748, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4160993985196769088, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
       propertyPath: m_Name
       value: Level Change
