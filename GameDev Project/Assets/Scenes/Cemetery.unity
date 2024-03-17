@@ -13839,17 +13839,21 @@ PrefabInstance:
       propertyPath: sceneBuildIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2938772078649897748, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4160993985196769088, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
       propertyPath: m_Name
       value: Level Change
       objectReference: {fileID: 0}
     - target: {fileID: 8384975483339311157, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.53
+      value: -12.43
       objectReference: {fileID: 0}
     - target: {fileID: 8384975483339311157, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.9
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 8384975483339311157, guid: b8d9a3fbd3f238f4ea8e3f5128ad9d11, type: 3}
       propertyPath: m_LocalPosition.z
