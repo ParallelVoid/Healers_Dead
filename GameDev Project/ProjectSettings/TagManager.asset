@@ -3,19 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Collision
   - Intermediate
   - Player
-  - 
-  - 
+  - Projectiles
+  - Enemy
   - 
   - 
   - 
@@ -52,4 +53,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 406212105
+    locked: 0
+  - name: Projectile
+    uniqueID: 1615143109
+    locked: 0
+  - name: Enemy
+    uniqueID: 2418886317
     locked: 0

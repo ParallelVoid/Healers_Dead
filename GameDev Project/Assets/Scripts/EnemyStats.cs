@@ -4,34 +4,21 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    [SerializeField]
-    private float enemyHealth = 50f;
-    private float enemyMaxHealth;
+    public int enemyHealth = 50;
+    public int damage = 10;
+    public playerStats playerHealth;
 
-    public BoxCollider2D bc2d;
+    public CapsuleCollider2D cap2d;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
+    public void TakeDamage(int damage) {
+        enemyHealth -= damage;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-
-    }
-
-    public void OnCollisionEnter2D (Collision2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            print("Playertakedamage");
-            
-    
+    public void Update() {
+        if (enemyHealth <= 0 && gameObject != null) {
+            Destroy(gameObject);
         }
     }
+
+  
 }

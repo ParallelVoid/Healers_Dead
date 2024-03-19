@@ -35,4 +35,8 @@ public class playerStats : MonoBehaviour {
         currentMana -= damage;
         manaBar.SetMana(currentMana);
     }
+
+    public void TakeDamage(int damage) {
+        currentHealth -= damage;
+        }
 }

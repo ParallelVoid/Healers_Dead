@@ -11,6 +11,7 @@ public class EnemySpawn : MonoBehaviour
     private float enemyInterval = 3.5f;
 
     private float enemyNumber;
+    private bool enemyCanSpawn = true;
 
 
 
@@ -24,9 +25,13 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
         enemyNumber = enemyNumber + 1;
-        if (enemyNumber < 10) {
+        if (enemyNumber < 10 && enemyCanSpawn) {
             StartCoroutine(spawnEnemy(interval, enemy));
         }
+        else if (enemyNumber >= 10) {
+            enemyCanSpawn = false;
+        }
+       
         
     }
     // Update is called once per frame

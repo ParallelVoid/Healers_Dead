@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
 {
-    [SerializeField]
+
     public GameObject player;
     public float speed;
 
