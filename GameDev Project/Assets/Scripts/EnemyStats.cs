@@ -8,7 +8,6 @@ public class EnemyStats : MonoBehaviour
     public int damage = 10;
     public playerStats playerHealth;
 
-    public CapsuleCollider2D cap2d;
 
     public void TakeDamage(int damage) {
         enemyHealth -= damage;
