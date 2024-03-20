@@ -25,10 +25,10 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 3), Quaternion.identity);
         enemyNumber = enemyNumber + 1;
-        if (enemyNumber < 10 && enemyCanSpawn) {
+        if (enemyNumber < 11 && enemyCanSpawn) {
             StartCoroutine(spawnEnemy(interval, enemy));
         }
-        else if (enemyNumber >= 10) {
+        else if (enemyNumber >= 11) {
             enemyCanSpawn = false;
         }
        

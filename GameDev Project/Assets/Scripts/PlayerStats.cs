@@ -17,6 +17,10 @@ public class playerStats : MonoBehaviour {
     public float healthRegen;
     public float manaRegen;
 
+    [SerializeField] private int currentExperience;
+    private int maxExperience;
+    [SerializeField] private int currentLevel;
+
     public HealthBar healthBar;
     public ManaBar manaBar;
 
@@ -35,6 +39,16 @@ public class playerStats : MonoBehaviour {
 
 
         anim = gameObject.GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        ExperienceManager.Instance.OnExperienceChange += HandleExperienceChange;
+    }
+
+    private void OnDisable()
+    {
+        ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
     }
 
     // Update is called once per frame
@@ -110,9 +124,24 @@ public class playerStats : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    // void PassiveRegeneration()
-    // {
-        
-    // }
+    private void HandleExperienceChange(int newExperience)
+    {
+        currentExperience += newExperience;
+        if(currentExperience >= maxExperience)
+        {
+            LevelUp();
+        }
+    }
     
+    private void LevelUp()
+    {
+        maxHealth += 10;
+        currentHealth = maxHealth;
+
+        currentLevel++;
+
+        currentExperience = 0;
+        maxExperience += 100;
+
+    }
 }
