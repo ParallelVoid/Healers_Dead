@@ -9,11 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     private Vector2 moveDirection;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
+
+    // void attackAnim()
+    // {
+    //     if(Weapon.playerIsAttacking)
+    //     {
+    //         anim.Play("Attack");
+    //     }
+    // }
 
 
 

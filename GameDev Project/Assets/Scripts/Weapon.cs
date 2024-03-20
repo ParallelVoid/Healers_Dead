@@ -12,6 +12,9 @@ public class Weapon : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
+    public static bool playerIsAttacking;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -26,9 +29,11 @@ public class Weapon : MonoBehaviour
                 if(Input.GetMouseButtonDown(0)) {
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 }
+                playerIsAttacking = true;
             }
             else {
                 timeBtwShots -= Time.deltaTime;
+                playerIsAttacking = false;
             }
         }
 

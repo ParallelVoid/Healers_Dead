@@ -13,6 +13,9 @@ public class playerStats : MonoBehaviour {
     public HealthBar healthBar;
     public ManaBar manaBar;
 
+    private Animator anim;
+    public bool ishurt = false;
+
     // Start is called before the first frame update
     void Start() {
         currentHealth = maxHealth/10;
@@ -20,6 +23,8 @@ public class playerStats : MonoBehaviour {
         healthBar.SetHealth(currentHealth);
         currentMana = maxMana;
         manaBar.SetMaxMana(maxMana);
+
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,7 +32,10 @@ public class playerStats : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Heal(20);
         }
+
+        
     }
+
 
     void Heal(int damage) {
         currentHealth += damage;
@@ -40,6 +48,9 @@ public class playerStats : MonoBehaviour {
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        anim.SetTrigger("isHurt");
+        //anim.Play("TakeDamage");
+
     }
     
 }
