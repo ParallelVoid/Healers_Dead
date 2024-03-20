@@ -13,6 +13,7 @@ public class Enemy_AI : MonoBehaviour
 
     public float distance;
     private Transform player;
+    
 
 
     // Start is called before the first frame update

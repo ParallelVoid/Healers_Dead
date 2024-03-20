@@ -14,7 +14,6 @@ public class playerStats : MonoBehaviour {
     public ManaBar manaBar;
 
     private Animator anim;
-    public bool ishurt = false;
 
     // Start is called before the first frame update
     void Start() {

@@ -7,10 +7,17 @@ public class EnemyStats : MonoBehaviour
     public int enemyHealth = 50;
     public int damage = 10;
     public playerStats playerHealth;
+    private Animator anim;
+
+    public void Start()
+    {
+        anim = gameObject.GetComponent<Animator>();
+    }
 
 
     public void TakeDamage(int damage) {
         enemyHealth -= damage;
+        anim.SetTrigger("isHurt");
     }
 
     public void Update() {
