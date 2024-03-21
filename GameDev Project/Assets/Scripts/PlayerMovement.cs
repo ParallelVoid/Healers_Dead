@@ -42,13 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
-    // void attackAnim()
-    // {
-    //     if(Weapon.playerIsAttacking)
-    //     {
-    //         anim.Play("Attack");
-    //     }
-    // }
+
 
 
 

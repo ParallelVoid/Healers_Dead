@@ -38,18 +38,19 @@ public class playerStats : MonoBehaviour {
         StartCoroutine(addMana());
 
 
+
         anim = gameObject.GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-        ExperienceManager.Instance.OnExperienceChange += HandleExperienceChange;
-    }
+    // private void OnEnable()
+    // {
+    //     ExperienceManager.Instance.OnExperienceChange += HandleExperienceChange;
+    // }
 
-    private void OnDisable()
-    {
-        ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
-    }
+    // private void OnDisable()
+    // {
+    //     ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
+    // }
 
     // Update is called once per frame
     void Update() {
