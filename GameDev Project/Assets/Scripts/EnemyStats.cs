@@ -6,13 +6,14 @@ public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 50;
     public int damage = 10;
-    public playerStats playerHealth;
+    public playerStats playerstats;
     private Animator anim;
-    private int expAmount = 10;
+    public int expAmount = 10;
 
     public void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        //playerstats = gameObject.GetComponent<playerStats>();
     }
 
 
@@ -23,7 +24,8 @@ public class EnemyStats : MonoBehaviour
 
     public void Update() {
         if (enemyHealth <= 0 && gameObject != null) {
-            ExperienceManager.Instance.AddExperience(expAmount);
+            //ExperienceManager.Instance.AddExperience(expAmount);
+            playerstats.AddExperience(expAmount);
             Destroy(gameObject);
         }
     }

@@ -18,11 +18,13 @@ public class playerStats : MonoBehaviour {
     public float manaRegen;
 
     [SerializeField] private int currentExperience;
-    private int maxExperience;
+    private int maxExperience = 50;
     [SerializeField] private int currentLevel;
 
     public HealthBar healthBar;
     public ManaBar manaBar;
+
+    public EnemyStats enemystats;
 
     private Animator anim;
 
@@ -125,14 +127,24 @@ public class playerStats : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void HandleExperienceChange(int newExperience)
+    public void AddExperience(int expAmount)
     {
-        currentExperience += newExperience;
+        currentExperience += expAmount;
         if(currentExperience >= maxExperience)
         {
             LevelUp();
         }
+
     }
+
+    // private void HandleExperienceChange(int newExperience)
+    // {
+    //     currentExperience += newExperience;
+    //     if(currentExperience >= maxExperience)
+    //     {
+    //         LevelUp();
+    //     }
+    // }
     
     private void LevelUp()
     {
