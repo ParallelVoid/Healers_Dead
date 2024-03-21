@@ -64,7 +64,7 @@ public class playerStats : MonoBehaviour {
             Heal();
         }
         
-        if (currentHealth < 0) {
+        if (currentHealth <= 0) {
             PlayerDeath();
         }
 

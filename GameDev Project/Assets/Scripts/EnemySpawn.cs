@@ -11,6 +11,7 @@ public class EnemySpawn : MonoBehaviour
     private float enemyInterval = 3.5f;
 
     private float enemyNumber;
+    [SerializeField] private float maxEnemyNumber;
     private bool enemyCanSpawn = true;
 
 
@@ -25,10 +26,10 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-6f, 6), Random.Range(-6f, 6f), 3), Quaternion.identity);
         enemyNumber = enemyNumber + 1;
-        if (enemyNumber < 11 && enemyCanSpawn) {
+        if (enemyNumber < maxEnemyNumber && enemyCanSpawn) {
             StartCoroutine(spawnEnemy(interval, enemy));
         }
-        else if (enemyNumber >= 11) {
+        else if (enemyNumber >= maxEnemyNumber) {
             enemyCanSpawn = false;
         }
        
