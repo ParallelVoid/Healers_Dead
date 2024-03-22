@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 7292577398450980256}
   - component: {fileID: 6077774763179651404}
   - component: {fileID: 8111912271200939182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Holy Sword
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

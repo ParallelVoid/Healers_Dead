@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 50;
-    public int damage = 10;
     public playerStats playerstats;
     private Animator anim;
     public int expAmount = 10;

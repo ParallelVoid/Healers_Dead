@@ -18,10 +18,16 @@ public class Projectile : MonoBehaviour
         
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null) {
-            if (hitInfo.collider.CompareTag("Enemy")) {
-            Debug.Log("enemy takes damage");
-            hitInfo.collider.GetComponent<EnemyStats>().TakeDamage(damage);
+            if (hitInfo.collider.CompareTag("Enemy")) 
+            {
+                Debug.Log("enemy takes damage");
+                hitInfo.collider.GetComponent<EnemyStats>().TakeDamage(damage);
             }
+            // if (hitInfo.collider.CompareTag("EnemyProjectiles")) 
+            // {
+            //     Debug.Log("enemy projectile takes damage");
+            //     hitInfo.collider.GetComponent<LichProjectile>().TakeDamage(damage);
+            // }
             DestroyProjectile();
 
         }

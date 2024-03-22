@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public GameObject projectile;
     public Transform shotPoint;
 
-    private float timeBtwShots;
+    [SerializeField] private float timeBtwShots;
     public float startTimeBtwShots;
 
     public static bool playerIsAttacking;
@@ -27,7 +27,9 @@ public class Weapon : MonoBehaviour
             if (timeBtwShots <= 0) 
             {
                 if(Input.GetMouseButtonDown(0)) {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
+                    Instantiate(projectile, shotPoint.position, transform.rotation);
+                    timeBtwShots = startTimeBtwShots;
+
                 }
                 playerIsAttacking = true;
             }
