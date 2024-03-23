@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 50
-  damage: 10
   playerstats: {fileID: 0}
   expAmount: 10
 --- !u!114 &7458004416578958117

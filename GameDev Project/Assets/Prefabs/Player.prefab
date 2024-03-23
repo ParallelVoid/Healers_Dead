@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7133384948886765196}
   - component: {fileID: 755237123600225876}
   - component: {fileID: 1005801342705154770}
+  - component: {fileID: 7973313645317201297}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -92,6 +93,50 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707881578211965576}
   m_Enabled: 1
+--- !u!114 &7973313645317201297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707881578211965576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &3500446045423498812
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +151,8 @@ GameObject:
   - component: {fileID: 2913784790504408428}
   - component: {fileID: 5231054112312788814}
   - component: {fileID: 2542210819932718756}
+  - component: {fileID: 8710614411942547856}
+  - component: {fileID: 506722915277047977}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -239,14 +286,14 @@ MonoBehaviour:
   currentHealth: -570
   maxMana: 100
   currentMana: 0
-  healAmount: 0
-  healCost: 0
+  healAmount: 5
+  healCost: 25
   healthRegen: 0
   manaRegen: 0
   currentExperience: 0
-  currentLevel: 0
-  healthBar: {fileID: 1725627682146828162, guid: cf967d83791e0824a9124a191d948c98, type: 3}
-  manaBar: {fileID: 3228721285824050396, guid: cb7c9fa879205ab43948813ad37f90c9, type: 3}
+  currentLevel: 1
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   enemystats: {fileID: 0}
 --- !u!61 &2542210819932718756
 BoxCollider2D:
@@ -293,6 +340,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1042179, y: 0.16}
   m_EdgeRadius: 0
+--- !u!95 &8710614411942547856
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500446045423498812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7da0e2182ebed864399668812d2c5dee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &506722915277047977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500446045423498812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000c37d7d4ab3c4cfd06f540af1094e3618c5204560ad462d90
+  m_ShapePath:
+  - {x: -0.04626826, y: -0.024879191, z: 0}
+  - {x: -0.034593947, y: 0.06654995, z: 0}
+  - {x: 0.03533308, y: 0.06606853, z: 0}
+  - {x: 0.055710047, y: -0.024879191, z: 0}
+  m_ShapePathHash: -1869632683
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 31666
+  m_LocalBounds:
+    m_Center: {x: 0.0047208928, y: 0.020835381, z: 0}
+    m_Extent: {x: 0.05098915, y: 0.045714572, z: 0}
 --- !u!1 &5837805062600422148
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +439,7 @@ MonoBehaviour:
   offset: -90
   projectile: {fileID: 7612703557044512821, guid: a09d66bc305f5e44a8a5e7c5c0f7e787, type: 3}
   shotPoint: {fileID: 2282548193186601581}
+  timeBtwShots: 0
   startTimeBtwShots: 0.25
 --- !u!1 &8371902526634423606
 GameObject:

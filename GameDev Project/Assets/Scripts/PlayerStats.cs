@@ -25,6 +25,7 @@ public class playerStats : MonoBehaviour {
     public ManaBar manaBar;
 
     public EnemyStats enemystats;
+    public Loadout loadout;
 
     private Animator anim;
 
