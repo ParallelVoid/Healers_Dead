@@ -27,7 +27,7 @@ public class playerStats : MonoBehaviour {
     public EnemyStats enemystats;
     //public Loadout loadout;
 
-    [SerializeField] private Animator anim;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start() {

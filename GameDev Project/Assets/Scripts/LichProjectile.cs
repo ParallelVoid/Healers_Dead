@@ -5,22 +5,21 @@ using UnityEngine;
 public class LichProjectile : MonoBehaviour
 {
     //public LayerMask whatIsSolid;
-    public float speed = 3f;
+    public float speed;
+    public playerStats currentHealth;
     public int damage = 20;
     //private int health = 20;
-    public float lifeTime = 3f;
+    public float lifeTime = 10f;
 
     public float distance;
     private Transform player;
-    
-    public playerStats currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Invoke("DestroyProjectile", lifeTime);
-        //Destroy(gameObject, lifeTime);
+        //Destroy(gameObject, lifeTime);()
     }
 
     // Update is called once per frame
@@ -34,11 +33,16 @@ public class LichProjectile : MonoBehaviour
 
     }
 
+    // void OnDestroy()
+    // {
+    //     Debug.Log("died");
+    // }
+
     void OnCollisionEnter2D (Collision2D collision) 
     {
         if (collision.gameObject.tag == "Player") 
         {
-            //currentHealth.TakeDamage(damage);
+            currentHealth.TakeDamage(damage);
             DestroyProjectile();
         }
     }
@@ -47,7 +51,7 @@ public class LichProjectile : MonoBehaviour
 
     void DestroyProjectile() 
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     
             
     }
