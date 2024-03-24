@@ -9,7 +9,7 @@ public class LichProjectile : MonoBehaviour
     public playerStats currentHealth;
     public int damage = 20;
     //private int health = 20;
-    //public float lifeTime;
+    public float lifeTime;
 
     public float distance;
     private Transform player;
@@ -18,7 +18,7 @@ public class LichProjectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //Invoke("DestroyProjectile", lifeTime);
+        Invoke("DestroyProjectile", lifeTime);
         //Destroy(gameObject, lifeTime);
     }
 

@@ -34,7 +34,7 @@ public class LichRangedAttack : MonoBehaviour
 
     private void Shoot()
     {
-        if (timeBtwShots <= 0) 
+        if (timeBtwShots <= 0 && projectile != null) 
             {
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBtwShots = startTimeBtwShots;

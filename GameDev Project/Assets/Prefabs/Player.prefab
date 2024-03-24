@@ -283,18 +283,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: -570
+  currentHealth: -2360
   maxMana: 100
   currentMana: 0
   healAmount: 5
   healCost: 25
   healthRegen: 0
   manaRegen: 0
-  currentExperience: 0
+  currentExperience: 10
   currentLevel: 1
   healthBar: {fileID: 0}
   manaBar: {fileID: 0}
   enemystats: {fileID: 0}
+  loadout: {fileID: 0}
+  anim: {fileID: 8710614411942547856}
 --- !u!61 &2542210819932718756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -387,7 +389,7 @@ MonoBehaviour:
   - {x: 0.055710047, y: -0.024879191, z: 0}
   m_ShapePathHash: -1869632683
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31666
+  m_InstanceId: -1904
   m_LocalBounds:
     m_Center: {x: 0.0047208928, y: 0.020835381, z: 0}
     m_Extent: {x: 0.05098915, y: 0.045714572, z: 0}

@@ -27,7 +27,7 @@ public class playerStats : MonoBehaviour {
     public EnemyStats enemystats;
     public Loadout loadout;
 
-    private Animator anim;
+    [SerializeField] private Animator anim;
 
     // Start is called before the first frame update
     void Start() {
@@ -39,9 +39,6 @@ public class playerStats : MonoBehaviour {
         
         //manaRegen += 5 * Time.deltaTime;
         StartCoroutine(addMana());
-
-
-
         anim = gameObject.GetComponent<Animator>();
     }
 
