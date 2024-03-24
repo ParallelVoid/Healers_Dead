@@ -41,6 +41,7 @@ public class Enemy_AI : MonoBehaviour
         if (collision.gameObject.tag == "Player") 
         {
             currentHealth.TakeDamage(damage);
+            Debug.Log("Player is hit");
         }
     }
 

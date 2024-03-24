@@ -155,4 +155,14 @@ public class playerStats : MonoBehaviour {
         maxExperience += 100;
 
     }
+
+    // void OnCollisionEnterBody2D (Collision2D collision)
+    // {
+    //     Debug.Log("Something hit player");
+    //     if(collision.gameObject.tag == "EnemyProjectile")
+    //     {
+    //         Debug.Log("Player is hit");
+    //         TakeDamage(20);
+    //     }
+    // }
 }

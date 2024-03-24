@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8179126774545708219}
   - component: {fileID: 4971147354314452005}
-  - component: {fileID: -2213001260722006968}
   - component: {fileID: 7601549433544140591}
+  - component: {fileID: 9034828851626458274}
+  - component: {fileID: 5281406957296792281}
   m_Layer: 9
   m_Name: Acid Ball
-  m_TagString: Projectile
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1615143109
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f7122e3ce9b6eb24ab72d3cd2d732e84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2213001260722006968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722805940482838564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326fa59ae4979ac439e089c4ff255fc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  currentHealth: {fileID: 5231054112312788814, guid: 1e2776b696b44e34e8a908642969ac32, type: 3}
-  damage: 20
-  lifeTime: 3
-  distance: 0
 --- !u!58 &7601549433544140591
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -132,9 +116,53 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00039482117, y: 0}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.050383884
+--- !u!50 &9034828851626458274
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722805940482838564}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5281406957296792281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722805940482838564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326fa59ae4979ac439e089c4ff255fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  currentHealth: {fileID: 5231054112312788814, guid: 1e2776b696b44e34e8a908642969ac32, type: 3}
+  damage: 20
+  lifeTime: 3
+  distance: 0

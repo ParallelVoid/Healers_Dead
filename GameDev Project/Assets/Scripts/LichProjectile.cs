@@ -33,11 +33,11 @@ public class LichProjectile : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D (Collision2D collision) 
+    void OnTriggerEnter2D (Collider2D other) 
     {
-        if (collision.gameObject.tag == "Player") 
+        if(other.gameObject.CompareTag("Player"))
         {
-            currentHealth.TakeDamage(damage);
+            other.gameObject.GetComponent<playerStats>().currentHealth -= 20;
             DestroyProjectile();
         }
     }
