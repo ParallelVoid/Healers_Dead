@@ -101,6 +101,7 @@ MonoBehaviour:
   speed: 3
   currentHealth: {fileID: 0}
   damage: 20
+  lifeTime: 1
   distance: 0
 --- !u!58 &7601549433544140591
 CircleCollider2D:
