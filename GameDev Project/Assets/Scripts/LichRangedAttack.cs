@@ -26,7 +26,7 @@ public class LichRangedAttack : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance < 7)
+        if (distance < 8)
         {
             Shoot();
         }
