@@ -8,12 +8,13 @@ public class Loadout : MonoBehaviour
     public static int healthChange;
     public static int manaChange;
     public static int speedChange;
-    public int damageChange;
+    public static int damageChange;
+    public static int healChange;
 
     [SerializeField] private int skillPoints = 20;
-    private int skillCost;
+    private int skillCost = 1;
 
-    private bool changeLoadout = false;
+    private bool changeLoadout;
     private bool canChange;
 
     public GameObject loadoutMenu;
@@ -25,13 +26,14 @@ public class Loadout : MonoBehaviour
     {
         loadoutMenu.SetActive(false);
         canChange = false;
+        changeLoadout = false;
         bc2d = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && this != null)
         {
             if(canChange)
             {
@@ -68,10 +70,13 @@ public class Loadout : MonoBehaviour
     private void OnTriggerExit2D (Collider2D other)
     {
         canChange = false;
+        loadoutMenu.SetActive(false);
+        PauseMenu.isPaused = false;
     }
 
-    private void AttackUpgrade()
+    public void AttackUpgrade()
     {
+        
         if(skillPoints > skillCost)
         {
             damageChange += 10;
@@ -79,6 +84,36 @@ public class Loadout : MonoBehaviour
             UseSkillPoints();
         }
         
+    }
+
+    public void HealUpgrade()
+    {
+        if(skillPoints > skillCost)
+        {
+            healChange += 10;
+            damageChange -= 10;
+            UseSkillPoints();
+        }
+    }
+
+    public void ManaUpgrade()
+    {
+        if(skillPoints > skillCost)
+        {
+            manaChange += 10;
+            speedChange -= 10;
+            UseSkillPoints();
+        }
+    }
+
+    public void HolyUpgrade()
+    {
+        if(skillPoints > skillCost)
+        {
+            speedChange += 10;
+            healChange -= 10;
+            UseSkillPoints();
+        }
     }
 
     private void UseSkillPoints()
