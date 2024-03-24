@@ -33,10 +33,10 @@ public class LichProjectile : MonoBehaviour
 
     }
 
-    // void OnDestroy()
-    // {
-    //     Debug.Log("died");
-    // }
+    void OnDestroy()
+    {
+        Debug.Log("died");
+    }
 
     void OnCollisionEnter2D (Collision2D collision) 
     {
