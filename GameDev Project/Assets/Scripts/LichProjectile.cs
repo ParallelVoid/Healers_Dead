@@ -9,7 +9,7 @@ public class LichProjectile : MonoBehaviour
     public playerStats currentHealth;
     public int damage = 20;
     //private int health = 20;
-    public float lifeTime = 10f;
+    //public float lifeTime;
 
     public float distance;
     private Transform player;
@@ -18,8 +18,8 @@ public class LichProjectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        Invoke("DestroyProjectile", lifeTime);
-        //Destroy(gameObject, lifeTime);()
+        //Invoke("DestroyProjectile", lifeTime);
+        //Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame
@@ -31,11 +31,6 @@ public class LichProjectile : MonoBehaviour
         }
 
 
-    }
-
-    void OnDestroy()
-    {
-        Debug.Log("died");
     }
 
     void OnCollisionEnter2D (Collision2D collision) 
@@ -51,7 +46,7 @@ public class LichProjectile : MonoBehaviour
 
     void DestroyProjectile() 
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     
             
     }
