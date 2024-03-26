@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float timeBtwShots;
     public float startTimeBtwShots;
 
-    public static bool playerIsAttacking;
+    public static bool playerIsAttacking = false;
 
 
     // Update is called once per frame
@@ -29,9 +29,9 @@ public class Weapon : MonoBehaviour
                 if(Input.GetMouseButton(0)) {
                     Instantiate(projectile, shotPoint.position, transform.rotation);
                     timeBtwShots = startTimeBtwShots;
-
+                    playerIsAttacking = true;
                 }
-                playerIsAttacking = true;
+                
             }
             else {
                 timeBtwShots -= Time.deltaTime;

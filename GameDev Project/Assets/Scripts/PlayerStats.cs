@@ -77,6 +77,11 @@ public class playerStats : MonoBehaviour {
             currentMana = 100;
         }
 
+        // if(Weapon.playerIsAttacking = true);
+        // {
+        //     anim.SetBool("isAttacking", true);
+        // }
+
 
         
         //currentMana = currentMana + Mathf.RoundToInt(manaRegen);

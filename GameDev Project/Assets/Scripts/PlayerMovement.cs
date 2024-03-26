@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     private Animator anim;
 
+    private bool facingLeft;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        if(Input.GetAxisRaw("Horizontal") > 0 && !facingLeft)
+        {
+            Flip();
+        }
+        if(Input.GetAxisRaw("Horizontal") < 0 && facingLeft)
+        {
+            Flip();
+        }
     }
 
     void ProcessInputs()
@@ -40,6 +52,16 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= 1;
+        gameObject.transform.localScale = currentScale;
+
+        facingLeft = !facingLeft;
     }
 
 
