@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class Loadout : MonoBehaviour
 {
-
-    public static int healthChange;
-    public static int manaChange;
-    public static int speedChange;
-    public static int damageChange;
-    public static int healChange;
-
-    [SerializeField] private int skillPoints = 20;
+    public int skillPoints = 20;
     private int skillCost = 1;
 
     private bool changeLoadout;
@@ -19,6 +12,7 @@ public class Loadout : MonoBehaviour
 
     public GameObject loadoutMenu;
     public BoxCollider2D bc2d;
+    public LoadoutStats loadoutstats;
 
 
     // Start is called before the first frame update
@@ -79,8 +73,8 @@ public class Loadout : MonoBehaviour
         
         if(skillPoints > skillCost)
         {
-            damageChange += 10;
-            healthChange -= 10;
+            loadoutstats.damageChange += 10;
+            loadoutstats.healthChange -= 10;
             UseSkillPoints();
         }
         
@@ -90,8 +84,8 @@ public class Loadout : MonoBehaviour
     {
         if(skillPoints > skillCost)
         {
-            healChange += 10;
-            damageChange -= 10;
+            loadoutstats.healChange += 10;
+            loadoutstats.damageChange -= 10;
             UseSkillPoints();
         }
     }
@@ -100,8 +94,8 @@ public class Loadout : MonoBehaviour
     {
         if(skillPoints > skillCost)
         {
-            manaChange += 10;
-            speedChange -= 10;
+            loadoutstats.manaChange += 10;
+            loadoutstats.speedChange -= 10;
             UseSkillPoints();
         }
     }
@@ -110,8 +104,8 @@ public class Loadout : MonoBehaviour
     {
         if(skillPoints > skillCost)
         {
-            speedChange += 10;
-            healChange -= 10;
+            loadoutstats.speedChange += 10;
+            loadoutstats.healChange -= 10;
             UseSkillPoints();
         }
     }
