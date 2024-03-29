@@ -8,22 +8,49 @@ public class HealBox : MonoBehaviour
     public playerStats currentHealth;
     private Transform player;
 
+    public bool playerWithinAura;
+    private float lifeTime = 5;
+
+    void Start()
+    {
+        Invoke("DestroyHealBox", lifeTime);
+    }
+
     private void OnTriggerEnter2D (Collider2D other) {
 
-        if (other.tag == "Player") {
-            currentHealth.Heal();
+        if (other.tag == "Player" && this != null) {
+            playerWithinAura = true;
+        }
+        else
+        {
+            playerWithinAura = false;
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerExit2D (Collider2D other)
     {
-        
+        playerWithinAura = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    // IEnumerator HealingAura()
+    // {
+    //     while (true)
+    //     {
+    //         if (currentHealth < 100)
+    //         {
+    //             currentHealth += 5;
+    //             yield return new WaitForSeconds(1);
+
+    //         }
+    //         else
+    //         {
+    //             yield return null;
+    //         }
+    //     }
+    // }
+
+    private void DestroyHealBox()
     {
-        
+        Destroy(gameObject);
     }
 }

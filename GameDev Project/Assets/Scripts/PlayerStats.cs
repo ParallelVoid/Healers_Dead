@@ -27,6 +27,14 @@ public class playerStats : MonoBehaviour {
     public EnemyStats enemystats;
     public Loadout loadout;
 
+    public HealBox healbox;
+    public HealBox playerWithinAura;
+    public Transform shotPoint;
+    private bool playerIsHealing;
+    private Coroutine coroutine;
+
+    //public GameObject player;
+
     [SerializeField] private Animator anim;
 
     // Start is called before the first frame update
@@ -40,6 +48,7 @@ public class playerStats : MonoBehaviour {
         //manaRegen += 5 * Time.deltaTime;
         StartCoroutine(addMana());
         anim = gameObject.GetComponent<Animator>();
+
     }
 
     // private void OnEnable()
@@ -59,7 +68,25 @@ public class playerStats : MonoBehaviour {
         manaBar.SetMana(currentMana);
         
         if (Input.GetKeyDown(KeyCode.Space) && currentMana > 25) {
-            Heal();
+           
+            Instantiate(healbox, shotPoint.position, Quaternion.identity);
+            if(playerWithinAura)
+            {
+                coroutine = StartCoroutine(HealingAura());
+                currentMana -= healCost;
+                manaBar.SetMana(currentMana);
+                playerIsHealing = true;
+            }
+            else if (!playerWithinAura)
+            {
+                StopCoroutine(coroutine);
+            }
+            
+            
+        }
+        else
+        {
+            playerIsHealing = false;
         }
         
         if (currentHealth <= 0) {
@@ -89,14 +116,33 @@ public class playerStats : MonoBehaviour {
         
     }
 
-
-    public void Heal() 
+    IEnumerator HealingAura()
     {
-        currentHealth += healAmount;
-        healthBar.SetHealth(currentHealth);
-        currentMana -= healCost;
-        manaBar.SetMana(currentMana);
+        for (int i = 0; i < 5; i++)
+        {
+            if (currentHealth < 100)
+            {
+                currentHealth += 5;
+                healthBar.SetHealth(currentHealth);
+                yield return new WaitForSeconds(1);
+
+            }
+            else
+            {
+                yield return null;
+            }
+        }
     }
+
+    //Old Heal System
+    // private void Heal() 
+    // {
+
+    //     // currentHealth += healAmount;
+    //     // healthBar.SetHealth(currentHealth);
+    //     // currentMana -= healCost;
+    //     // manaBar.SetMana(currentMana);
+    // }
 
     public void TakeDamage(int damage) 
     {
