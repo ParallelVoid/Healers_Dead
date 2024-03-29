@@ -152,7 +152,7 @@ public class playerStats : MonoBehaviour {
     private void LevelUp()
     {
         maxHealth += 10;
-        currentHealth = maxHealth;
+        currentHealth += 50;
 
         currentLevel++;
 
