@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerStats : MonoBehaviour {
 
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
 
     public int maxMana = 100;
@@ -26,6 +26,7 @@ public class playerStats : MonoBehaviour {
 
     public EnemyStats enemystats;
     public Loadout loadout;
+    public LoadoutStats loadoutstats;
 
     public HealBox healbox;
     public HealBox playerWithinAura;

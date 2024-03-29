@@ -17,14 +17,12 @@ public class HealBox : MonoBehaviour
     }
 
     private void OnTriggerEnter2D (Collider2D other) {
-
+ 
         if (other.tag == "Player" && this != null) {
             playerWithinAura = true;
         }
-        else
-        {
-            playerWithinAura = false;
-        }
+        
+        playerWithinAura = false;
     }
 
     private void OnTriggerExit2D (Collider2D other)

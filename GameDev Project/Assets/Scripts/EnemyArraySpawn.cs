@@ -7,9 +7,12 @@ public class EnemyArraySpawn : MonoBehaviour
     [SerializeField] private float spawnRate = 1f;
 
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private GameObject lichboss;
 
     [SerializeField] private bool canSpawn = true;
+    //[SerializeField] private bool bossCanSpawn = false;
     private float enemyNumber;
+    private float bossNumber;
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +23,17 @@ public class EnemyArraySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyNumber >= 20)
+        if (enemyNumber >= 30)
         {
             canSpawn = false;
+        }
+        if (enemyNumber == 20)
+        {
+            if (bossNumber < 1)
+            {
+                SpawnBoss();
+            }
+            
         }
     }
 
@@ -39,5 +50,11 @@ public class EnemyArraySpawn : MonoBehaviour
             Instantiate(enemyToSpawn, new Vector3(Random.Range(-6f, 6), Random.Range(-6f, 6f), 3), Quaternion.identity);
             enemyNumber = enemyNumber + 1;
         }
+    }
+
+    private void SpawnBoss()
+    {
+        Instantiate(lichboss, new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 3), Quaternion.identity);
+        bossNumber = bossNumber + 1;
     }
 }

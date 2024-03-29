@@ -9,7 +9,7 @@ public class Enemy_AI : MonoBehaviour
     public float speed;
     public float stoppingDistance;
     public playerStats currentHealth;
-    public int damage = 10;
+    public int damage;
 
     public float distance;
     private Transform player;
@@ -20,6 +20,7 @@ public class Enemy_AI : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(DifficultyRamping());
     }
 
     // Update is called once per frame
@@ -42,6 +43,24 @@ public class Enemy_AI : MonoBehaviour
         {
             currentHealth.TakeDamage(damage);
             Debug.Log("Player is hit");
+        }
+    }
+
+    IEnumerator DifficultyRamping()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (this != null)
+            {
+                speed += 0.3f;
+                damage += 5;
+                yield return new WaitForSeconds(10);
+
+            }
+            else
+            {
+                yield return null;
+            }
         }
     }
 

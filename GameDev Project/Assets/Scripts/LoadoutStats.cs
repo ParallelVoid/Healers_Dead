@@ -11,6 +11,8 @@ public class LoadoutStats : ScriptableObject
     public int damageChange;
     public int healChange;
 
+    //public int finalHealth;
+
     public void OnEnable()
     {
         healthChange = 0;
@@ -18,6 +20,13 @@ public class LoadoutStats : ScriptableObject
         speedChange = 0;
         damageChange = 0;
         healChange = 0;
+
+        //FinalStats();
     }
+
+    // public void FinalStats()
+    // {
+    //     finalHealth = 100 + healthChange;
+    // }
 
 }

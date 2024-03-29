@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: -2360
+  currentHealth: 0
   maxMana: 100
   currentMana: 0
   healAmount: 5
@@ -296,6 +296,10 @@ MonoBehaviour:
   manaBar: {fileID: 3228721285824050396, guid: cb7c9fa879205ab43948813ad37f90c9, type: 3}
   enemystats: {fileID: 7807223228402544753, guid: a7f4acb0f42a62d41bbb07f67ae0571b, type: 3}
   loadout: {fileID: 0}
+  loadoutstats: {fileID: 11400000, guid: 70313dd107df2b646b934d36ba57dd5b, type: 2}
+  healbox: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
+  playerWithinAura: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
+  shotPoint: {fileID: 2282548193186601581}
   anim: {fileID: 8710614411942547856}
 --- !u!61 &2542210819932718756
 BoxCollider2D:
@@ -389,7 +393,7 @@ MonoBehaviour:
   - {x: 0.055710047, y: -0.024879191, z: 0}
   m_ShapePathHash: -1869632683
   m_Mesh: {fileID: 0}
-  m_InstanceId: 46862
+  m_InstanceId: 31376
   m_LocalBounds:
     m_Center: {x: 0.0047208928, y: 0.020835381, z: 0}
     m_Extent: {x: 0.05098915, y: 0.045714572, z: 0}
