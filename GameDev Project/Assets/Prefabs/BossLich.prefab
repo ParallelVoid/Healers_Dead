@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8749921458890470010}
   - component: {fileID: 7115735827928638351}
   - component: {fileID: 7173922426383923875}
+  - component: {fileID: 813909527747526777}
   m_Layer: 10
   m_Name: BossLich
   m_TagString: Enemy
@@ -232,6 +233,18 @@ MonoBehaviour:
   shotPoint: {fileID: 5370538349838195925}
   projectile: {fileID: 722805940482838564, guid: 324840f6c11302d4abc8eb96e333587a, type: 3}
   startTimeBtwShots: 1
+--- !u!114 &813909527747526777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803747487180802502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb87c7abe207ff8489eccf75c7fa08fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8484267063735809195
 GameObject:
   m_ObjectHideFlags: 0
