@@ -34,6 +34,9 @@ public class playerStats : MonoBehaviour {
     private bool playerIsHealing;
     private Coroutine coroutine;
 
+    public float invulnerable = 3f;
+    private bool isInvulnerable = false;
+
     //public GameObject player;
 
     [SerializeField] private Animator anim;
@@ -68,7 +71,7 @@ public class playerStats : MonoBehaviour {
         healthBar.SetHealth(currentHealth);
         manaBar.SetMana(currentMana);
         
-        if (Input.GetKeyDown(KeyCode.Space) && currentMana > 25) {
+        if (Input.GetKeyDown(KeyCode.E) && currentMana > 25) {
            
             Instantiate(healbox, shotPoint.position, Quaternion.identity);
             if(playerWithinAura)
@@ -135,6 +138,13 @@ public class playerStats : MonoBehaviour {
         }
     }
 
+    IEnumerator JustHurt()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(invulnerable);
+        isInvulnerable = false;
+    }
+
     //Old Heal System
     // private void Heal() 
     // {
@@ -147,10 +157,14 @@ public class playerStats : MonoBehaviour {
 
     public void TakeDamage(int damage) 
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        anim.SetTrigger("isHurt");
-        //anim.Play("TakeDamage");
+        if(!isInvulnerable)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+            anim.SetTrigger("isHurt");
+            StartCoroutine(JustHurt());
+        }
+        
 
     }
 
