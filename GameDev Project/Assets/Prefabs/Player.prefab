@@ -241,7 +241,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   healbox: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
   playerWithinAura: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
   shotPoint: {fileID: 2282548193186601581}
+  invulnerable: 1
   anim: {fileID: 8710614411942547856}
 --- !u!61 &2542210819932718756
 BoxCollider2D:
