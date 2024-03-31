@@ -5,10 +5,10 @@ using UnityEngine;
 public class HealBox : MonoBehaviour
 {
 
-    public playerStats currentHealth;
+    public playerStats coroutine;
     private Transform player;
 
-    public bool playerWithinAura;
+    public static bool playerWithinAura;
     private float lifeTime = 5;
 
     void Start()
@@ -21,8 +21,11 @@ public class HealBox : MonoBehaviour
         if (other.tag == "Player" && this != null) {
             playerWithinAura = true;
         }
+        else if((other.tag == "Player" && this == null))
+        {
+            playerWithinAura = false;
+        }
         
-        playerWithinAura = false;
     }
 
     private void OnTriggerExit2D (Collider2D other)
@@ -30,22 +33,6 @@ public class HealBox : MonoBehaviour
         playerWithinAura = false;
     }
 
-    // IEnumerator HealingAura()
-    // {
-    //     while (true)
-    //     {
-    //         if (currentHealth < 100)
-    //         {
-    //             currentHealth += 5;
-    //             yield return new WaitForSeconds(1);
-
-    //         }
-    //         else
-    //         {
-    //             yield return null;
-    //         }
-    //     }
-    // }
 
     private void DestroyHealBox()
     {

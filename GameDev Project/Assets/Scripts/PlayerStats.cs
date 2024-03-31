@@ -52,6 +52,7 @@ public class playerStats : MonoBehaviour {
         //manaRegen += 5 * Time.deltaTime;
         StartCoroutine(addMana());
         anim = gameObject.GetComponent<Animator>();
+        //healbox = gameObject.GetComponent<Healbox>();
 
     }
 
@@ -84,6 +85,7 @@ public class playerStats : MonoBehaviour {
             else if (!playerWithinAura)
             {
                 StopCoroutine(coroutine);
+                coroutine = null;
             }
             
             
