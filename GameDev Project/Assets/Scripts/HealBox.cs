@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealBox : MonoBehaviour
 {
 
-    public playerStats coroutine;
+    //public playerStats coroutine;
     private Transform player;
 
     public static bool playerWithinAura;

@@ -86,7 +86,6 @@ public class playerStats : MonoBehaviour {
             else if (!playerWithinAura)
             {
                 StopCoroutine(coroutine);
-                coroutine = null;
             }
             
             
