@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ProcessInputs();
+        //FindObjectOfType<AudioManager>().Play("PlayerWalk");
     }
 
     void FixedUpdate()

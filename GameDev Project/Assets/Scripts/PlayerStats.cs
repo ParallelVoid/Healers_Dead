@@ -75,7 +75,7 @@ public class playerStats : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && currentMana > 25) {
            
             Instantiate(healbox, shotPoint.position, Quaternion.identity);
-            //FindObjectOfType<AudioManager>().Play("PlayerHeal");
+            FindObjectOfType<AudioManager>().Play("PlayerHeal");
             if(playerWithinAura)
             {
                 coroutine = StartCoroutine(HealingAura());

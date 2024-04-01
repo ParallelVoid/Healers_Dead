@@ -10,10 +10,12 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Tutorial");
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
     }
 }
