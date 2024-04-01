@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3874533534651073047}
   - component: {fileID: 7165712765211535386}
-  - component: {fileID: 4715164239219221796}
   - component: {fileID: 3321443238723531878}
   - component: {fileID: 2119462822177074937}
   - component: {fileID: 8749921458890470010}
@@ -19,7 +18,7 @@ GameObject:
   - component: {fileID: 813909527747526777}
   m_Layer: 10
   m_Name: BossLich
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,21 +56,6 @@ MonoBehaviour:
   currentHealth: {fileID: 5231054112312788814, guid: 1e2776b696b44e34e8a908642969ac32, type: 3}
   damage: 10
   distance: 0
---- !u!114 &4715164239219221796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803747487180802502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f59c46fabb738439ec232fe71222a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealth: 500
-  playerstats: {fileID: 5231054112312788814, guid: 1e2776b696b44e34e8a908642969ac32, type: 3}
-  expAmount: 10
 --- !u!50 &3321443238723531878
 Rigidbody2D:
   serializedVersion: 4
@@ -245,6 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb87c7abe207ff8489eccf75c7fa08fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossHealth: 500
+  playerstats: {fileID: 5231054112312788814, guid: 1e2776b696b44e34e8a908642969ac32, type: 3}
+  expAmount: 100
 --- !u!1 &8484267063735809195
 GameObject:
   m_ObjectHideFlags: 0
