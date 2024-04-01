@@ -13,11 +13,17 @@ public class EnemyArraySpawn : MonoBehaviour
     //[SerializeField] private bool bossCanSpawn = false;
     private float enemyNumber;
     private float bossNumber;
+
+    private bool canChangeScene = false;
+
+    [SerializeField] private GameObject levelTransition;
     
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spawner());
+        StartCoroutine(CanChangeLevel());
+        levelTransition.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +41,12 @@ public class EnemyArraySpawn : MonoBehaviour
             }
             
         }
+
+        if(canChangeScene)
+        {
+            levelTransition.SetActive(true);
+        }
+
     }
 
     private IEnumerator Spawner()
@@ -50,6 +62,12 @@ public class EnemyArraySpawn : MonoBehaviour
             Instantiate(enemyToSpawn, new Vector3(Random.Range(-6f, 6), Random.Range(-6f, 6f), 3), Quaternion.identity);
             enemyNumber = enemyNumber + 1;
         }
+    }
+
+    private IEnumerator CanChangeLevel()
+    {
+        yield return new WaitForSeconds(60);
+        canChangeScene = true;
     }
 
     private void SpawnBoss()
