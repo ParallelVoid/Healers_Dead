@@ -4,31 +4,15 @@ using UnityEngine;
 
 public class BossStats : MonoBehaviour
 {
-    public int bossHealth = 500;
-    public playerStats playerstats;
-    private Animator anim;
-    public int expAmount = 100;
-
-    public void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
-        //playerstats = gameObject.GetComponent<playerStats>();
+        
     }
 
-
-    public void TakeDamage(int damage) {
-        bossHealth -= damage;
-        anim.SetTrigger("isHurt");
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
-
-    public void Update() {
-        if (bossHealth <= 0 && gameObject != null) {
-            //ExperienceManager.Instance.AddExperience(expAmount);
-            playerstats.AddExperience(expAmount);
-            Destroy(gameObject);
-        }
-    }
-
-  
 }
-

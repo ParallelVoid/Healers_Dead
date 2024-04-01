@@ -23,10 +23,6 @@ public class Projectile : MonoBehaviour
                 Debug.Log("enemy takes damage");
                 hitInfo.collider.GetComponent<EnemyStats>().TakeDamage(damage);
             }
-            if (hitInfo.collider.CompareTag("Boss"))
-            {
-                hitInfo.collider.GetComponent<BossStats>().TakeDamage(damage);
-            }
             // if (hitInfo.collider.CompareTag("EnemyProjectiles")) 
             // {
             //     Debug.Log("enemy projectile takes damage");

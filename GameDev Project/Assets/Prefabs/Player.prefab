@@ -282,20 +282,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae16e25ff6b940cd8eef384128e1868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 130
-  currentHealth: 60
+  maxHealth: 100
+  currentHealth: 0
   maxMana: 100
   currentMana: 0
   healAmount: 5
   healCost: 25
   healthRegen: 0
   manaRegen: 0
-  currentExperience: 300
-  currentLevel: 4
+  currentExperience: 10
+  currentLevel: 1
   healthBar: {fileID: 1725627682146828162, guid: cf967d83791e0824a9124a191d948c98, type: 3}
   manaBar: {fileID: 3228721285824050396, guid: cb7c9fa879205ab43948813ad37f90c9, type: 3}
   enemystats: {fileID: 7807223228402544753, guid: a7f4acb0f42a62d41bbb07f67ae0571b, type: 3}
-  loadout: {fileID: 5114166140097102997, guid: 4c754369a7159e4418dd4946e1a606b2, type: 3}
+  loadout: {fileID: 0}
   loadoutstats: {fileID: 11400000, guid: 70313dd107df2b646b934d36ba57dd5b, type: 2}
   healbox: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
   playerWithinAura: {fileID: 3811463607479125131, guid: 111da5b13418c9f48b5d60abe49c10f7, type: 3}
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3500446045423498812}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -388,33 +388,16 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000c37d7d4ab3c4cfd06f540af1094e3618c5204560ad462d90
   m_ShapePath:
-  - {x: -0.14214993, y: -0.42758512, z: 0}
-  - {x: -0.14847374, y: -0.17118931, z: 0}
-  - {x: -0.21901989, y: -0.1699295, z: 0}
-  - {x: -0.21901989, y: -0.10568237, z: 0}
-  - {x: -0.2744484, y: -0.1308775, z: 0}
-  - {x: -0.29242802, y: -0.08305788, z: 0}
-  - {x: -0.27819252, y: -0.04504633, z: 0}
-  - {x: -0.2076807, y: -0.04042244, z: 0}
-  - {x: -0.17415905, y: 0.123719215, z: 0}
-  - {x: -0.12051201, y: 0.15016794, z: 0}
-  - {x: -0.10459614, y: 0.2361126, z: 0}
-  - {x: -0.12687874, y: 0.4271016, z: 0}
-  - {x: -0.015598297, y: 0.41939783, z: 0}
-  - {x: 0.11504078, y: 0.38890362, z: 0}
-  - {x: 0.15642166, y: 0.27749348, z: 0}
-  - {x: 0.10230827, y: 0.17245007, z: 0}
-  - {x: 0.23042965, y: 0.10204935, z: 0}
-  - {x: 0.25919437, y: -0.08651924, z: 0}
-  - {x: 0.17929268, y: -0.27189207, z: 0}
-  - {x: 0.1739645, y: -0.43397713, z: 0}
-  - {x: 0.0035085678, y: -0.4636569, z: 0}
-  m_ShapePathHash: -1223121649
+  - {x: -0.04626826, y: -0.024879191, z: 0}
+  - {x: -0.034593947, y: 0.06654995, z: 0}
+  - {x: 0.03533308, y: 0.06606853, z: 0}
+  - {x: 0.055710047, y: -0.024879191, z: 0}
+  m_ShapePathHash: -1869632683
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1276
+  m_InstanceId: 31376
   m_LocalBounds:
-    m_Center: {x: -0.016616821, y: -0.018277645, z: 0}
-    m_Extent: {x: 0.2758112, y: 0.44537926, z: 0}
+    m_Center: {x: 0.0047208928, y: 0.020835381, z: 0}
+    m_Extent: {x: 0.05098915, y: 0.045714572, z: 0}
 --- !u!1 &5837805062600422148
 GameObject:
   m_ObjectHideFlags: 0
