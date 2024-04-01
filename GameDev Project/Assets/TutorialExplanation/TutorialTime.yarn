@@ -1,14 +1,17 @@
 ﻿title: TutorialTime
 tags:
 ---
+Press the SPACE BAR to advance dialogue
 Luvian: Alright, it's been a while since I've done this...
-Luvian: Let's move around and get my bearings for a moment. 
+Luvian: Let's move around and get my bearings.
 Press WASD keys to move around.
 Luvian: Now for these has-beens, a simple light fragment should be enough
-Left click to launch light projectiles at the skeleton
+LEFT CLICK to launch light projectiles at the skeleton
 You can also hold down the clicking function to automatically launch light projectiles continuously 
 Luvian: I wonder if I remember how to start a healing spell.
 Press E to heal yourself
+Healing yourself consumes AETHER. Your aether is represented by the blue bar in the upper left. Aether fills up over time. 
+The green bar with a heart is your HEALTH bar. Your health bar doesn't like it when you get too friendly with the undead.
 Luvian: This sure takes me back. 
 Press ESC to open the pause menu. 
 Luvian: Sigh, time to pay my respects to the dead.
